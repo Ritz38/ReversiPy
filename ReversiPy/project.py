@@ -113,7 +113,7 @@ def realizar_volteretas(ultima_jugada, jugadas_j1, jugadas_j2):
         if 1 <= x < 8 and 1 <= y < 8 and f'{y},{x}' in (posicion_fichas_j2 if jugador_turno == jugador_2 else posicion_fichas_j1):
             fichas_a_voltear.extend(fichas_temporales)
 
-        
+
     if len(fichas_a_voltear)>0:
         input(f'\nVoltereta en {fichas_a_voltear}, pulsa [ENTER] para asignar jugada al tablero')
         print()
@@ -131,10 +131,8 @@ def realizar_volteretas(ultima_jugada, jugadas_j1, jugadas_j2):
         for ficha in fichas_a_voltear:
             if ficha in posicion_fichas_j2 if jugador_turno == jugador_1 else posicion_fichas_j1:
                 posicion_fichas_j2 if jugador_turno == jugador_1 else posicion_fichas_j1.remove(ficha)
-        
-        generar_tablero(posicion_fichas_j1, posicion_fichas_j2)
 
-    return len(fichas_a_voltear) > 0
+        generar_tablero(posicion_fichas_j1, posicion_fichas_j2)
 
 
 
@@ -221,7 +219,7 @@ while cantidad_jugadas < 64:
             cantidad_jugadas_j2 += 1
 
         # cede el turno al otro jugador
-        
+
 
     else:
         if jugador_turno == jugador_1:
@@ -231,7 +229,7 @@ while cantidad_jugadas < 64:
             posicion_fichas_j2.append(decision)
             cantidad_jugadas_j2 += 1
 
-    
+
 
     # re genera el tablero para mostrar las nuevas jugadas
     generar_tablero(posicion_fichas_j1, posicion_fichas_j2)
